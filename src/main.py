@@ -1,8 +1,7 @@
 from secrets import choice, randbelow
 
-UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-LOWER = "abcdefghijklmnopqrstuvwxyz"
-DIGITS = "0123456789"
+BASE58 = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+DIGITS = "123456789"
 SPECIAL = "!@#$%^&*"
 
 
@@ -24,7 +23,7 @@ def main():
     for i in range(1, 2):
         result[p[i]] = choice(DIGITS)
     for i in range(2, len(p)):
-        result[p[i]] = choice(UPPER + LOWER + DIGITS + SPECIAL)
+        result[p[i]] = choice(BASE58 + DIGITS + SPECIAL)
     print("".join(result))
 
 
